@@ -1,0 +1,14 @@
+<div class='row'>
+  <% @recipes.each do |recipe| %>
+    <div class='col-sm-3'>
+      <div class='card'>
+        <%= image_tag recipe_image(recipe), class: 'card-img-top' %>
+        <div class='card-body'>
+          <h5 class='card-title text-center'>
+            <%= link_to recipe[:title], recipe_path(recipe[:id]), class: 'recipe-link' %>
+          </h5>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

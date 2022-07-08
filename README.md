@@ -1,24 +1,31 @@
-# README
+# Overview
+Ruby on rails application using Contentful API to fetch Recipe list and Recipe details.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# pre-requiste
+Create .env file in root directory. Add the required fields *SPACE_KEY*, *ACCESS_TOKEN*, *ENV_ID* as key-value pair in it.
 
-Things you may want to cover:
+```
+SPACE_KEY=randomkey
+ACCESS_TOKEN=randomtoken
+ENV_ID=env
+```
+# Running application
+1. clone the project
+2. bundle install
+3. bundle exec rails webpacker:install
+4. Server would be running at localhost:3000
 
-* Ruby version
+# Implementation details
+The web application comprises  of providing endpoints using services, for fetching data from Contentful API to fetch all recipes based upon their creation and individual 
+recipe details from the Contentful Api.
+ - Recipe listing page (`/recipe`)
+ - Recipe detail page (`/recipes/:id`)
 
-* System dependencies
 
-* Configuration
+# Running tests
+The tests coverage can be seen by running `rspec` for the entire app or individual files.
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+# Enhancements
+- Add docker to run App.
+- Beautify UI layout
+- Add vcr for testing Apis properly.

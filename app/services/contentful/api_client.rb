@@ -1,8 +1,9 @@
+# frozen_string_literal: true
+
 require 'contentful'
 
 module Contentful
   class ApiClient
-
     def self.connection
       Contentful::Client.new(
         space: ENV['SPACE_KEY'],
@@ -10,9 +11,8 @@ module Contentful
         environment: ENV['ENV_ID'],
         dynamic_entries: :auto
       )
-    rescue => e
+    rescue StandardError => e
       e.class.to_s
     end
-
   end
 end

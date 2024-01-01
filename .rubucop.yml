@@ -1,0 +1,21 @@
+# .rubocop.yml
+
+# Enable rubocop-rails cops
+require:
+  - rubocop-rails
+
+# AllCops settings
+AllCops:
+  Exclude:
+    - 'db/**/*'
+    - 'config/**/*'
+
+# Rails settings
+Rails:
+  Enabled: true
+
+# Style guide enforcement (customize as needed)
+Style/Documentation:
+  Enabled: false
+Style/FrozenStringLiteralComment:
+  Enabled: false

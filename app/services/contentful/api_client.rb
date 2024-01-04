@@ -11,8 +11,10 @@ module Contentful
         environment: ENV['ENV_ID'],
         dynamic_entries: :auto
       )
+    rescue Contentful::NotFound => e
+      raise e
     rescue StandardError => e
-      e.class.to_s
+      raise e
     end
   end
 end

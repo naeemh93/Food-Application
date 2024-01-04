@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-describe 'Contentful Recipe Service' do
+RSpec.describe Contentful::RecipeService do
   subject { Contentful::RecipeService.new }
 
   describe '#public methods' do

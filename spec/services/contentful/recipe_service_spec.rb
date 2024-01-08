@@ -32,7 +32,7 @@ RSpec.describe Contentful::RecipeService do
 
     context 'request is invalid' do
       before do
-        subject.stub(:recipes_list) { raise ArgumentError, 'invalid request' }
+        allow(subject).to receive(:recipes_list).and_raise(ArgumentError, 'invalid request')
       end
 
       it 'returns 401 status' do

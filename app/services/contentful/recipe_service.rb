@@ -10,7 +10,7 @@ module Contentful
       not_found: 404
     }.freeze
 
-    def perform(method_name, *arguments)
+    def self.perform(method_name, *arguments)
       { data: send(method_name, *arguments), status: map_status(:success) }
     rescue Contentful::NotFound => e
       { data: [], status: map_status(e.message) }

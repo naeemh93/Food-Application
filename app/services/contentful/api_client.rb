@@ -4,6 +4,10 @@ require 'contentful'
 
 module Contentful
   class ApiClient
+    def self.client
+      @connection ||= connection
+    end
+
     def self.connection
       Contentful::Client.new(
         space: ENV['SPACE_KEY'],

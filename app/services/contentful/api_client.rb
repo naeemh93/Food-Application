@@ -12,9 +12,9 @@ module Contentful
         dynamic_entries: :auto
       )
     rescue Contentful::NotFound => e
-      raise e
+      puts e.message
     rescue StandardError => e
-      raise e
+      puts e.message
     end
   end
 end

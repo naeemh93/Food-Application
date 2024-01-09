@@ -3,13 +3,14 @@
 require 'rails_helper'
 
 RSpec.describe RecipesController do
-
   describe '#index' do
     let(:params) { { format: 'json' } }
 
     context 'when the request is successful' do
       before do
-        allow(Contentful::RecipeService).to receive(:recipes_list) { [double(id: 1, title: 'Recipe 1', image: 'image.jpg')] }
+        allow(Contentful::RecipeService).to receive(:recipes_list) {
+                                              [double(id: 1, title: 'Recipe 1', image: 'image.jpg')]
+                                            }
       end
 
       it 'responds with a 200 status code' do

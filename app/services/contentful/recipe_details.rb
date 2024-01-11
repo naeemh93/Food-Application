@@ -3,7 +3,7 @@
 module Contentful
   class RecipeDetails < RecipeService
     def self.recipe_details(recipe_id)
-      recipe = ApiClient.connection.entry(recipe_id)
+      recipe = ApiClient.client.entry(recipe_id)
       raise Contentful::NotFound if recipe.nil?
 
       extended_recipe_fields(recipe)

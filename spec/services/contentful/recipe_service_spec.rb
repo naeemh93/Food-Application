@@ -11,7 +11,7 @@ RSpec.describe Contentful::RecipeService do
     end
   end
 
-  describe '#recipes_list' do
+  describe '.recipes_list' do
     context 'request is valid' do
       it 'returns correct response for recipes list' do
         response = subject.call(:recipes_list)
@@ -37,7 +37,7 @@ RSpec.describe Contentful::RecipeService do
     end
   end
 
-  describe '#recipe_details' do
+  describe '.recipe_details' do
     let(:valid_id) { subject.call(:recipes_list)[:data].first.dig(:id) }
 
     context 'when resource is found' do
